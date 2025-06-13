@@ -1,0 +1,27 @@
+@use './fonts';
+
+// FONTS
+$font-face: 'Poppins', 'sans-serif';
+
+// COLORS
+// basic colors:
+$color-light: #fff;
+$color-dark: #111625;
+$color-dark-purple: #341931;
+
+// other colors:
+$blue-dark: #115793;
+$blue-medium: #00a1cb;
+$blue-light: #0abebe;
+$green-dark: #3a7634;
+$green-light: #5eb11c;
+$yellow: #f2bc06;
+$orange-light: #f18d05;
+$orange-dark: #e54028;
+$pink: #ff1168;
+$gradient-vertical: linear-gradient(#ee0979, #ff6a00);
+$gradient-horizontal: linear-gradient(to right, #ee0979, #ff6a00);
+
+$gradient-dark: linear-gradient(to bottom right, transparent, #111);
+$boxshadow: 0 0 10px #707070;
+

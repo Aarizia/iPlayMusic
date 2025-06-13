@@ -1,0 +1,50 @@
+@use './variables';
+
+#root {
+
+    font-family: variables.$font-face;
+    display: grid;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer'
+    ;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+        
+    header {
+        grid-area: header;
+    }
+        
+    main {
+        grid-area: main;
+        overflow: hidden scroll;
+    }
+        
+    footer {
+        grid-area: footer;
+    }
+
+    h1 {
+        font-size: 0.9375rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 2rem;
+        background: variables.$gradient-vertical;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .line-break {
+        display: block;
+    }
+
+    @media (min-width: 23.4375rem) {
+        width: 23.4375rem;
+        margin: 0 auto;
+    }
+}
