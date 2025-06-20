@@ -5,6 +5,7 @@ import convertDuration from '../utility/convertDuration';
 import { useContext } from "react";
 import { IsPlayingContext } from "../providers/IsPlaying";
 import { Link } from 'react-router';
+import PlaceholderImage from '/images/artist-placeholder-image.svg';
 
 const data = {
     currentTrack: {
@@ -25,11 +26,11 @@ export default function PlayerSmall() {
         currentTime = currentTrack.isPlaying.duration - 3;
     }
 
-    console.log(currentTrack)
+    //console.log(currentTrack)
 
     return (
         <article className="player-small">
-            <button className="player-small__button" style={{backgroundImage: `url(${currentTrack.isPlaying.albumImageUrl ? currentTrack.isPlaying.albumImageUrl : data.currentTrack.albumImageUrl})`}}>
+            <button className="player-small__button" style={{backgroundImage: `url(${currentTrack.isPlaying.albumImageUrl ? currentTrack.isPlaying.albumImageUrl : PlaceholderImage})`}}>
                 <Link to={'/player'}>
                     <div className="player-small__icon-container">
                         <FaPause className="player-small__icon"/>

@@ -17,21 +17,21 @@ const data = {
             name: 'P1 Track 1',
             artist: 'Artist 1',
             duration: 9,
-            albumImageUrl: '/images/1.jpg'
+            albumImageUrl: '/images/4.jpg'
         },
         {
             id: 'playlist 1 track 2',
             name: 'P1 Track 2',
             artist: 'Artist 2',
             duration: 57,
-            albumImageUrl: '/images/2.jpg'
+            //albumImageUrl: '/images/4.jpg'
         },
         {
             id: 'playlist 1 track 3',
             name: 'P1 Track 3',
             artist: 'Artist 3',
             duration: 290,
-            albumImageUrl: '/images/3.jpg'
+            albumImageUrl: '/images/4.jpg'
         },
         {
             id: 'playlist 1 track 4',
@@ -45,28 +45,28 @@ const data = {
             name: 'P1 Track 5',
             artist: 'Artist 5',
             duration: 1010,
-            albumImageUrl: '/images/5.jpg'
+            albumImageUrl: '/images/4.jpg'
         },
         {
             id: 'playlist 1 track 6',
             name: 'P1 Track 6',
             artist: 'Artist 6',
             duration: 3686,
-            albumImageUrl: '/images/1.jpg'
+            albumImageUrl: '/images/4.jpg'
         },
         {
             id: 'playlist 1 track 7',
             name: 'P1 Track 7',
             artist: 'Artist 7',
             duration: 5706,
-            albumImageUrl: '/images/2.jpg'
+            albumImageUrl: '/images/4.jpg'
         },
         {
             id: 'playlist 1 track 8',
             name: 'P1 Track 8',
             artist: 'Artist 8',
             duration: 959774,
-            albumImageUrl: '/images/3.jpg'
+            albumImageUrl: '/images/4.jpg'
         }
     ]
 }
