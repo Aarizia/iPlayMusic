@@ -5,10 +5,12 @@ import './walkthrough.scss';
 import { GiResonance } from "react-icons/gi";
 import { IoIosHeart } from "react-icons/io";
 import { IoMusicalNote } from "react-icons/io5";
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
+import { ThemeContext } from '../providers/Theme';
 
 export default function walkthroughPage() {
 
+    const theme = useContext(ThemeContext);
     const [currentInputChecked, setCurrentInputChecked] = useState(1);
     const radioOneRef = useRef();
     const radioTwoRef = useRef();
@@ -18,24 +20,35 @@ export default function walkthroughPage() {
 
        if (radioOneRef.current.checked) {
         setCurrentInputChecked(1);
-       } 
-       if (radioTwoRef.current.checked) {
+       } else if (radioTwoRef.current.checked) {
         setCurrentInputChecked(2);
-       } 
-       if (radioThreeRef.current.checked) {
+       } else if (radioThreeRef.current.checked) {
         setCurrentInputChecked(3);
        }
     }
 
     return (
-        <>  {currentInputChecked === 1 &&
-            <BackgroundImage imageUrl={ColorBlob} />}
+        <> 
+            {theme.currentTheme === 'light' && currentInputChecked === 1 &&
+                <BackgroundImage imageUrl={ColorBlob} />
+            }
+            {theme.currentTheme === 'dark' &&
+                <div className='walkthrough__gradient-background'>
+                    {currentInputChecked === 1 &&
+                        <BackgroundImage imageUrl={ColorBlob} />
+                    }
+                </div>
+            }
             <main className='walkthrough'>
-                <h1 className='walkthrough__heading'>
-                    {currentInputChecked === 1 && 'Where words fail, music speaks'}
-                    {currentInputChecked === 2 && 'No music no life'}
-                    {currentInputChecked === 3 && 'Peace.love music'}
-                </h1>
+                {currentInputChecked === 1 &&
+                    <h1 className='walkthrough__heading'>Where words fail,<span className='line-break'>music speaks</span></h1>
+                }
+                {currentInputChecked === 2 &&
+                    <h1 className='walkthrough__heading'>No music<span className='line-break'>no life</span></h1>
+                }
+                {currentInputChecked === 3 &&
+                    <h1 className='walkthrough__heading'>Peace.love<span className='line-break'>music</span></h1>
+                }
                 <p className='walkthrough__text'>Vivamus auctor dui dignissim, sollicitudin nunc ac, aliquam justo. Vestibulum pellentesque lacinia eleifend.</p>
                 <nav className='walkthrough__menu'>
                     <label className='walkthrough__label'>
