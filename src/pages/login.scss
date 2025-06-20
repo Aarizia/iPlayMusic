@@ -1,0 +1,123 @@
+@use '../style/variables';
+
+.login {
+    padding: 2.125rem 1.5625rem;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    font-size: 0.9375rem;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__label {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        gap: 1rem;
+        font-weight: 700;
+        padding-block-end: 0.5rem;
+    }
+
+    &__input {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        border: none;
+        font-family: variables.$font-face;
+        font-weight: 300;
+        background-color: transparent;
+
+        &::placeholder {
+            padding-inline-start: 0.15rem;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        width: 1.3125rem;
+        height: auto;
+    }
+
+    &__button {
+        background-color: transparent;
+        font-family: variables.$font-face;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 10rem;
+        padding-block: 0.96875rem;
+    }
+
+    &__touch {
+        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__touch-icon-container {
+        width: 4.6875rem;
+        aspect-ratio: 1;
+        border-radius: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__touch-icon {
+        font-size: 1.875rem;
+        color: variables.$color-light;
+    }
+}
+
+body.darkmode {
+    .login {
+        background-color: variables.$pink;
+
+        &__label {
+            border-block-end: 3px solid variables.$color-light;
+        }
+
+        &__input::placeholder {
+            color: variables.$color-light;
+        }
+
+        &__button {
+            border: 3px solid variables.$color-light;
+        }
+
+        &__touch-icon-container {
+            background: variables.$light-overlay;
+        }
+    }
+    
+}
+
+body.lightmode {
+    .login {
+
+        &__label {
+            border-block-end: 3px solid variables.$color-dark;
+        }
+
+        &__input::placeholder {
+            color: variables.$color-dark;
+        }
+
+        &__button {
+            border: 3px solid variables.$color-dark;
+        }
+
+        &__touch-icon-container {
+            background-color: variables.$pink;
+        }
+    }
+}

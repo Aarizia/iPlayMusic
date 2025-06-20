@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import './AlbumDetailsMain.scss';
 import TrackCard from './cards/TrackCard';
+import PlayerSmall from './PlayerSmall';
 
 export default function AlbumDetailsMain( props ) {
 
@@ -33,6 +34,7 @@ export default function AlbumDetailsMain( props ) {
                     {data.tracks.map(track => <TrackCard key={track.id} data={track} />)}
                 </ul>
             </section>
+            <PlayerSmall />
         </main>
     )
 }

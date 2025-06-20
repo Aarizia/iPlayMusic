@@ -1,7 +1,7 @@
 import { Children, cloneElement } from 'react';
 import './SvgLinearGradient.scss';
 
-export default function SvgLinearGradient({ children, width = '60px', height = '60px' }) {
+export default function SvgLinearGradient({ children, width = '20px', height = '20px' }) {
 
     const clonedChildren = Children.map(children, child => {
         
