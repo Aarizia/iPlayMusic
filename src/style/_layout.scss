@@ -31,6 +31,12 @@
         font-size: 0.9375rem;
         font-weight: 300;
         text-transform: uppercase;
+
+        &.login__heading {
+            font-size: 2.25rem;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
     }
 
     h2 {
