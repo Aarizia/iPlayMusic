@@ -1,6 +1,7 @@
 @use '../style/variables';
 
 .album {
+    padding-block-end: 4rem;
     
     &__details {
         display: flex;
