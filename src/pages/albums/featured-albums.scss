@@ -1,0 +1,14 @@
+@use '../../style/variables';
+
+.featured-albums {
+    padding: 1.0225rem 1.7575rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.2969rem;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
