@@ -20,6 +20,7 @@
     main {
         grid-area: main;
         overflow: hidden scroll;
+        scroll-behavior: smooth;
     }
         
     footer {
@@ -34,13 +35,34 @@
 
     h2 {
         font-size: 2rem;
-        background: variables.$gradient-vertical;
+        background: variables.$gradient-diagonal;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+        
+        &.light-text {
+            background: initial;
+            background-clip: initial;
+            -webkit-text-fill-color: initial;
+        }
+        
+        &.font-size-small {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        &.non-gradient {
+            background: initial;
+            background-clip: initial;
+            -webkit-text-fill-color: initial;
+        }
     }
 
     .line-break {
         display: block;
+    }
+
+    .light-text {
+        color: variables.$color-light;
     }
 
     @media (min-width: 23.4375rem) {

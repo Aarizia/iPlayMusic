@@ -3,8 +3,10 @@ import './Footer.scss';
 import { HiCollection } from "react-icons/hi";
 import { BiSolidPlaylist } from "react-icons/bi";
 import { GiTwirlCenter } from "react-icons/gi";
-import { CgDarkMode } from "react-icons/cg";
+import { VscColorMode } from "react-icons/vsc";
 import { MdCategory } from "react-icons/md";
+import SvgLinearGradient from './SvgLinearGradient';
+import DarkmodeCheckbox from './DarkmodeCheckBox';
 
 export default function Footer() {
 
@@ -14,27 +16,41 @@ export default function Footer() {
                 <ul className='menu__list'>
                     <li className='menu__item'>
                         <NavLink to='/albums' className={({ isActive }) => isActive ? "active" : "not-active"}>
-                            <HiCollection className='menu__icon' />
+                            {({ isActive }) => isActive ? 
+                            <HiCollection className='menu__icon' /> :
+                            <SvgLinearGradient>
+                                <HiCollection className='menu__icon' />
+                            </SvgLinearGradient>}
                         </NavLink>
                     </li>
                     <li className='menu__item'>
                         <NavLink to='/playlists' className={({ isActive }) => isActive ? "active" : "not-active"}>
-                            <BiSolidPlaylist className='menu__icon' />
+                            {({ isActive }) => isActive ? 
+                            <BiSolidPlaylist className='menu__icon' /> :
+                            <SvgLinearGradient>
+                                <BiSolidPlaylist className='menu__icon' />
+                            </SvgLinearGradient>}
                         </NavLink>
                     </li>
                     <li className='menu__item'>
                         <NavLink to='/' className={({ isActive }) => isActive ? "active" : "not-active"}>
-                            <GiTwirlCenter className='menu__icon' />
+                            {({ isActive }) => isActive ? 
+                            <GiTwirlCenter className='menu__icon' /> :
+                            <SvgLinearGradient>
+                                <GiTwirlCenter className='menu__icon' />
+                            </SvgLinearGradient>}
                         </NavLink>
                     </li>
                     <li className='menu__item'>
-                        <button className='menu__button'>
-                            <CgDarkMode className='menu__icon' />
-                        </button>
+                        <DarkmodeCheckbox />
                     </li>
                     <li className='menu__item'>
                         <NavLink to='/categories' className={({ isActive }) => isActive ? "active" : "not-active"}>
-                            <MdCategory className='menu__icon' />
+                            {({ isActive }) => isActive ? 
+                            <MdCategory className='menu__icon' /> :
+                            <SvgLinearGradient>
+                                <MdCategory className='menu__icon' />
+                            </SvgLinearGradient>}
                         </NavLink>
                     </li>
                 </ul>

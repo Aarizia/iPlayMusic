@@ -1,6 +1,8 @@
 import { Link } from 'react-router';
 import './AlbumsMain.scss';
 import NewReleasesAlbumCard from './cards/NewReleasesAlbumCard';
+import { useEffect, useState } from 'react';
+import PlayerSmall from './PlayerSmall';
 
 const data = {
     featuredAlbums: [
@@ -71,35 +73,49 @@ const data = {
 
 export default function AlbumsMain() {
 
+    const [albumsData, setAlbumsData] = useState(data);
+    const [featuredListItems, setFeaturedListItems] = useState([]);
+    const [newRealeasesListItems, setNewReleasesListItems] = useState([]); 
+
+    useEffect(() => {
+
+        setFeaturedListItems(
+
+            albumsData.featuredAlbums.map(album => {
+                        return (
+                            <li key={album.id} className='albums-featured__item'>
+                                <Link to={`/albums/${album?.id}`}>
+                                    <img src={album.imgUrl} alt={`Image of ${album.title}`} className='albums-featured__image' />
+                                </Link>
+                            </li>
+                        )
+                    })
+        );
+
+        setNewReleasesListItems(
+            albumsData.newReleasesAlbums.map(album => <NewReleasesAlbumCard key={album.id} data={album} className='albums-new-releases__item' />)
+        );
+
+    }, [albumsData]);
+
     return (
         <main className="albums">
             <h2 className='albums__title'>All Albums</h2>
             <section className='albums-featured'>
                 <h3 className='albums__heading'>Featured Albums</h3>
-                <button className='albums__button'>View All</button>
+                <Link to={'/albums/featured-albums'} className='albums__link'>View All</Link>
                 <ul className='albums-featured__list'>
-                    {data?.featuredAlbums.map(album => {
-                        return (
-                            <li key={album.id} className='albums-featured__item'>
-                                <Link to={"#"}>
-                                    <img src={album.imgUrl} alt={`Image of ${album.title}`} className='albums-featured__image' />
-                                </Link>
-                            </li>
-                        )
-                    })}
+                    {featuredListItems}
                 </ul>
             </section>
             <section className='albums-new-releases'>
                 <h3 className='albums__heading'>New Releases</h3>
-                <button className='albums__button'>View All</button>
+                <Link to={'/albums/new-realeases'} className='albums__link'>View All</Link>
                 <ul className='albums-new-releases__list'>
-                    {data?.newReleasesAlbums.map(album => {
-                        return (
-                            <NewReleasesAlbumCard key={album.id} data={album} className='albums-new-releases__item' />
-                        )
-                    })}
+                    {newRealeasesListItems}
                 </ul>
             </section>
+            <PlayerSmall />
         </main>
     )
 }

@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: 2.2969rem;
+    padding-block-end: 5rem;
 
     &__title {
         padding-inline-start: 1.7575rem;
@@ -16,9 +17,7 @@
         padding-inline-start: 1.7575rem;
     }
     
-    &__button {
-        background-color: transparent;
-        border: none;
+    &__link {
         color: variables.$pink;
         font-weight: 300;
         cursor: pointer;
@@ -36,6 +35,8 @@
         &__list {
             grid-column: 1 / 3;
             display: flex;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
         }
 
         &__item:first-child {
@@ -46,7 +47,6 @@
             max-width: 8.125rem;
             aspect-ratio: 1;
             object-fit: cover;
-            box-shadow: variables.$boxshadow;
             border-radius: 0.5rem;
             margin: 0.5rem;
         }
@@ -64,5 +64,16 @@
             gap: 1.5rem;
             padding-inline: 1.7575rem;
         }
+    }
+}
+
+body.lightmode {
+    .albums-featured__image {
+        box-shadow: variables.$boxshadow-light;
+    }
+}
+body.darkmode {
+    .albums-featured__image {
+        box-shadow: variables.$boxshadow-dark;
     }
 }

@@ -1,8 +1,10 @@
-import FeaturedSongCard from "./cards/FeaturedSongCard";
+import { useEffect, useState } from "react";
+import FeaturedAlbumCard from "./cards/FeaturedAlbumCard";
 import './FeaturedMain.scss';
+import PlayerSmall from "./PlayerSmall";
 
 const data = {
-    songs: [
+    albums: [
         {
             id: 'featured1',
             title: 'Title One',
@@ -38,16 +40,24 @@ const data = {
 
 export default function FeaturedMain() {
 
+    const [featuredData, setFeaturedData] = useState(data);
+    const [listItems, setListItems] = useState([]);
+
+    useEffect(() => {
+
+        setListItems(
+            featuredData.albums.map(album => <FeaturedAlbumCard key={album.id} data={album} />)
+        );
+
+    }, [featuredData]);
+
     return (
         <main className="featured">
             <h2>Featured</h2>
             <ul className="featured__list">
-                {data?.songs.map(song => {
-                    return (
-                        <FeaturedSongCard key={song.id} data={song} />
-                    )
-                })}
+                {listItems}
             </ul>
+            <PlayerSmall />
         </main>
     )
 }

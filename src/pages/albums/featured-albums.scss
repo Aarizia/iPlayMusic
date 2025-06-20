@@ -1,13 +1,14 @@
-.featured {
-    position: relative;
+@use '../../style/variables';
+
+.featured-albums {
+    padding: 1.0225rem 1.7575rem;
     display: flex;
     flex-direction: column;
     gap: 2.2969rem;
-    padding: 1.0225rem 1.7575rem 5rem;
 
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 3.011rem;
+        gap: 1.5rem;
     }
 }

@@ -11,3 +11,6 @@ function App() {
 }
 
 export default App
+
+
+// bedst at bruge <video> tag til lyd, den kan også bare afspille lyd
